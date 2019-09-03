@@ -92,8 +92,9 @@ function addGoogleCalendar(
         /*https://www.php.net/manual/en/function.rawurlencode.php
         rawurldecode() - Decode URL-encoded strings*/
     }
-    $output = '<a href="' . $url . '" class="' . implode(' ', $myCustomClass) . '">' . $linktext . '</a>';
+    $output = '<a href="' . $url . '" class="' . implode(' ', $myCustomClass) . '">' . $linktext . '</a> ';
     return $output;
+    
 }
 
 echo addGoogleCalendar(
@@ -103,6 +104,8 @@ echo addGoogleCalendar(
     'Teste agendamento Webinar (description)',
     'Rua Lauro Linhares, 589, Ático - Trindade, Florianópolis - SC, CEP 88036-001'
 );
+
+    
 
 /*
  *
@@ -114,3 +117,17 @@ echo addGoogleCalendar(
  *
  */
 ?>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var uri = "https://w3schools.com/my test.asp?name=ståle&car=saab";
+  var res = encodeURIComponent(uri);
+  document.getElementById("demo").innerHTML = res;
+  console.log(myFunction);
+}
+
+</script>
