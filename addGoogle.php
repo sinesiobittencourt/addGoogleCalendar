@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
+<style>
+    .button {
+        margin: 40%;
+    }
+</style>
+
 <?php
 /* 
 anchor address:
@@ -82,17 +88,19 @@ function addGoogleCalendar(
     }
     if ($location) {
         $url .= '&location=' . rawurlencode($location);
+        //https://www.php.net/manual/en/function.rawurlencode.php
+        //rawurldecode() - Decode URL-encoded strings
     }
     $output = '<a href="' . $url . '" class="' . implode(' ', $myCustomClass) . '">' . $linktext . '</a>';
     return $output;
 }
 
 echo addGoogleCalendar(
-    'Example Event for Webinar.hostgator.com.br',
+    'Webinar.hostgator.com.br (Title)',
     'June 30, 2017 8:00pm',
     'July 2, 2017 10:00am',
     'Teste agendamento Webinar (description)',
-    '1600 Pennsylvania Ave NW, Washington, DC 20500'
+    'Rua Lauro Linhares, 589, Ático - Trindade, Florianópolis - SC, CEP 88036-001'
 );
 
 /*
