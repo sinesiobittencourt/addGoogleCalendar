@@ -88,8 +88,8 @@ function addGoogleCalendar(
     }
     if ($location) {
         $url .= '&location=' . rawurlencode($location);
-        //https://www.php.net/manual/en/function.rawurlencode.php
-        //rawurldecode() - Decode URL-encoded strings
+        /*https://www.php.net/manual/en/function.rawurlencode.php
+        rawurldecode() - Decode URL-encoded strings*/
     }
     $output = '<a href="' . $url . '" class="' . implode(' ', $myCustomClass) . '">' . $linktext . '</a>';
     return $output;
