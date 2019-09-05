@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-
+<script src="script.js"></script>
 
 <style>
     .button {
@@ -94,40 +94,52 @@ function addGoogleCalendar(
     }
     $output = '<a href="' . $url . '" class="' . implode(' ', $myCustomClass) . '">' . $linktext . '</a> ';
     return $output;
-    
 }
 
 echo addGoogleCalendar(
-    'Webinar.hostgator.com.br (Title)',
-    'June 30, 2017 8:00pm',
-    'July 2, 2017 10:00am',
-    'Teste agendamento Webinar (description)',
-    'Rua Lauro Linhares, 589, Ático - Trindade, Florianópolis - SC, CEP 88036-001'
+    $name = 'oi',
+    $startdate = 'June 30, 2019 8:00pm'
+
 );
 
-    
-
-/*
- *
- *  Example Usage:
- *
+/*  Example Usage:
  *  echo addGoogleCalendar('Example Event', 'June 30, 2017 8:00pm');
  *  echo addGoogleCalendar('Example Event', 'June 30, 2017 8:00pm', 'July 2, 2017 10:00am', 'This is my detailed event description', '1600 Pennsylvania Ave NW, Washington, DC 20500');
  *  echo addGoogleCalendar('Example Event', 'June 30, 2017', 'July 2, 2017', 'This is my detailed event description', '1600 Pennsylvania Ave NW, Washington, DC 20500', true, 'gCal+', array('my-custom-class') );
- *
  */
 ?>
 
 <button onclick="myFunction()">Try it</button>
-
 <p id="demo"></p>
 
-<script>
-function myFunction() {
-  var uri = "https://w3schools.com/my test.asp?name=ståle&car=saab";
-  var res = encodeURIComponent(uri);
-  document.getElementById("demo").innerHTML = res;
-  console.log(myFunction);
-}
 
+<script type="text/javascript">
+    function myFunction() {
+        var uri = "<?php echo $name, $startdate; ?>";
+        var res = encodeURIComponent(uri);
+        document.getElementById("demo").innerHTML = res;
+        //console.log(uri);
+        console.log("<?php echo $startdate; ?>");
+
+    }
+
+    var form = document.getElementById('formulario');
+    var campo = document.getElementById('campo');
+    var campo2 = document.getElementById('campo2');
+
+    form.addEventListener('submit', function(e) {
+        // alerta o valor do campo
+        alert(campo.value + campo2.value);
+
+
+        // impede o envio do form
+        e.preventDefault();
+    });
 </script>
+
+<form id="formulario">
+    <input type="text" id="campo"> <br/>
+    <input type="text" id="campo2"> <br/>
+
+    <input type="submit" value="Enviar">
+</form>
